@@ -130,6 +130,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/white"
+        android:fontFamily="@font/roboto"
         android:padding="18dp"
         android:text="@string/send_to_login"
         android:textAllCaps="false"

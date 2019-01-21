@@ -87,6 +87,15 @@ public class NewPostActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Add New Post");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        npToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                finish();
+            }
+        });
 
         postImg.setOnClickListener(new View.OnClickListener() {
             @Override
