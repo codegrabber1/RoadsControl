@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">RoadsCheck</string>
+    <string name="setup_btn">Save Account settings</string>
+    <string name="setup_name">Set Up your name</string>
+    <string name="logo_text_hint">Your Email</string>
+    <string name="img_alt">Logo</string>
+    <string name="logo_pass_hint">Password</string>
+    <string name="login_btn">Login</string>
+    <string name="send_to_reg">For posting info you need a new account</string>
+    <string name="ac_settings_text">Account Settings</string>
+    <string name="log_out">Logout</string>
+    <string name="action_search">Search</string>
+    <string name="reg_btn">Register</string>
+    <string name="send_to_login">Have an account?</string>
+    <string name="conf_ren_pass">Confirm password</string>
+    <string name="add_post_description">Add Description ...</string>
+    <string name="add_post_btn">Send information</string>
+    <string name="todo">TODO</string>
+    <string name="bottom_home">Home</string>
+    <string name="bottom_notification">Notification</string>
+    <string name="bottom_account">Account</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="likes">Likes</string>
+    <string name="get_text_description">Text</string>
+    <string name="get_title">Title</string>
+    <string name="localization_text">Set Localization</string>
+    <string name="set_defect_type">Set type of defect</string>
+    <string name="defect_street">м.Черкаси, вул. Смілянська, 32</string>
+    <string name="defect_type">Defect type</string>
+</resources>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "380077366689",
+    "firebase_url": "https://roadscheck.firebaseio.com",
+    "project_id": "roadscheck",
+    "storage_bucket": "roadscheck.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:380077366689:android:9db5293ad266bb67",
+        "android_client_info": {
+          "package_name": "makecodework.roadscheck"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "380077366689-sv2b8df3css8i2qaqs9isq7b69bm89ca.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "makecodework.roadscheck",
+            "certificate_hash": "12aa03499cc972aadf32656121d163562f69b7e0"
+          }
+        },
+        {
+          "client_id": "380077366689-5m3l561c16qvang4lus3l1n5m7990vq1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHz0gBOtJJG3u72ZeEE_lIJQyGmAwBSHI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "380077366689-5m3l561c16qvang4lus3l1n5m7990vq1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
