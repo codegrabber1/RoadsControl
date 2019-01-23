@@ -10,13 +10,13 @@
     <ImageView
         android:id="@+id/get_simple_image"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:contentDescription="TODO"
-        android:scaleType="center"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/simple_toolbar"
-        app:srcCompat="@drawable/image_placeholder" />
+        app:srcCompat="@drawable/post_placeholder" />
 
     <TextView
         android:id="@+id/get_title"
@@ -27,7 +27,9 @@
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/roboto"
         android:text="@string/get_title"
+        android:textAlignment="center"
         android:textColor="@color/colorAccent"
+        android:textSize="16dp"
         android:textStyle="bold"
         android:typeface="sans"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +43,11 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
+        android:fontFamily="@font/roboto"
+        android:padding="5dp"
         android:text="@string/get_text_description"
+        android:textColor="@color/input_color_text"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/get_localization" />
@@ -64,7 +70,10 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
+        android:fontFamily="@font/roboto"
+        android:padding="5dp"
         android:text="street"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/get_title" />

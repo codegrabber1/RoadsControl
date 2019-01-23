@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private TextView logoImg;
+    private ImageView logoImg;
     private EditText loginName;
     private EditText loginPass;
     private Button loginBtn;
@@ -49,7 +49,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent regIntent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(regIntent);
-                finish();
             }
         });
 

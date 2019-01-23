@@ -104,6 +104,6 @@ public class RegisterActivity extends AppCompatActivity {
     private void senToMain() {
         Intent i = new Intent(RegisterActivity.this, MainActivity.class);
         startActivity(i);
-        finish();
+
     }
 }

@@ -29,4 +29,5 @@
     <string name="set_defect_type">Set type of defect</string>
     <string name="defect_street">м.Черкаси, вул. Смілянська, 32</string>
     <string name="defect_type">Defect type</string>
+    <string name="status_repair">Status Repair</string>
 </resources>

@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Check Roads");
 
-        if(appAuth.getCurrentUser() != null){
+        if(appAuth.getCurrentUser() != null) {
 
             mainBotNav = findViewById(R.id.mainBotNav);
 

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_post_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!--<android.support.v7.widget.CardView-->
+    <!--android:id="@+id/cardView"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--app:cardBackgroundColor="@color/AccentBackground"-->
+    <!--app:layout_constraintEnd_toEndOf="parent"-->
+    <!--app:layout_constraintStart_toStartOf="parent"-->
+    <!--app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--&lt;!&ndash;<android.support.constraint.ConstraintLayout&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="wrap_content">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<de.hdodenhof.circleimageview.CircleImageView&ndash;&gt;-->
+    <!--&lt;!&ndash;android:id="@+id/blog_user_image"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="100dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="100dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginStart="16dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginTop="16dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginBottom="8dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:src="@drawable/profile_placeholder"&ndash;&gt;-->
+    <!--&lt;!&ndash;app:layout_constraintBottom_toBottomOf="parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;app:layout_constraintTop_toTopOf="parent" />&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+    <!--&lt;!&ndash;android:id="@+id/user_name"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="18dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginStart="16dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginTop="24dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginEnd="8dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:fontFamily="@font/roboto"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:text="User Name"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:textColor="@color/white"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:textSize="16sp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:textStyle="bold"&ndash;&gt;-->
+    <!--&lt;!&ndash;app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;app:layout_constraintHorizontal_bias="0.0"&ndash;&gt;-->
+    <!--&lt;!&ndash;app:layout_constraintStart_toEndOf="@+id/blog_user_image"&ndash;&gt;-->
+    <!--&lt;!&ndash;app:layout_constraintTop_toTopOf="parent" />&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+    <!--&lt;!&ndash;android:id="@+id/user_post_count"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginStart="16dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginTop="24dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginEnd="8dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:fontFamily="@font/roboto"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:text="0 Posts"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:textColor="@color/input_hint"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:textSize="14sp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:textStyle="bold"&ndash;&gt;-->
+    <!--&lt;!&ndash;app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;app:layout_constraintHorizontal_bias="0.0"&ndash;&gt;-->
+    <!--&lt;!&ndash;app:layout_constraintStart_toEndOf="@+id/blog_user_image"&ndash;&gt;-->
+    <!--&lt;!&ndash;app:layout_constraintTop_toBottomOf="@+id/user_name" />&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+    <!--&lt;!&ndash;android:id="@+id/user_set_account"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginStart="8dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginTop="24dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginEnd="16dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:fontFamily="@font/roboto"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:text="SetUp Account"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:textColor="@color/colorAccent"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:textSize="14sp"&ndash;&gt;-->
+    <!--&lt;!&ndash;app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;app:layout_constraintHorizontal_bias="1.0"&ndash;&gt;-->
+    <!--&lt;!&ndash;app:layout_constraintStart_toEndOf="@+id/user_post_count"&ndash;&gt;-->
+    <!--&lt;!&ndash;app:layout_constraintTop_toBottomOf="@+id/user_name" />&ndash;&gt;-->
+    <!--&lt;!&ndash;</android.support.constraint.ConstraintLayout>&ndash;&gt;-->
+    <!---->
+    <!--</android.support.v7.widget.CardView>-->
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/user_posts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/user_post_image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="TODO"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/post_placeholder" />
+
+            <TextView
+                android:id="@+id/user_post_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/roboto"
+                android:inputType="textMultiLine|textImeMultiLine"
+                android:text="@string/defect_type"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/user_post_image"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/user_post_location"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/roboto"
+                android:inputType="textMultiLine"
+                android:text="@string/defect_street"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/user_post_image"
+                app:layout_constraintTop_toBottomOf="@+id/user_post_title" />
+
+            <TextView
+                android:id="@+id/status_defect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/roboto"
+                android:text="Repair"
+                android:textColor="@color/input_hint"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/user_post_image"
+                app:layout_constraintTop_toBottomOf="@+id/user_post_location" />
+
+            <TextView
+                android:id="@+id/edit_user_post"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/roboto"
+                android:text="Edit Post"
+                android:textColor="@color/AccentBackground"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/user_post_image"
+                app:layout_constraintTop_toBottomOf="@+id/status_defect" />
+
+            <ImageView
+                android:id="@+id/del_user_post"
+                android:layout_width="25dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/edit_user_post"
+                app:layout_constraintTop_toBottomOf="@+id/status_defect"
+                app:srcCompat="@mipmap/ic_delete" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>

@@ -103,7 +103,9 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
+                android:fontFamily="@font/roboto"
                 android:text="0 Likes"
+                android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/blog_like"
                 app:layout_constraintTop_toBottomOf="@+id/def_local" />
@@ -123,6 +125,23 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/blog_image"
                 app:layout_constraintTop_toBottomOf="@+id/blog_user_image" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="18dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/status_repair"
+                android:textColor="@color/input_hint"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/blog_like_count"
+                app:layout_constraintTop_toBottomOf="@+id/def_local" />
 
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>

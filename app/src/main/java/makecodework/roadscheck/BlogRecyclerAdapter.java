@@ -67,7 +67,6 @@ public class BlogRecyclerAdapter extends RecyclerView.Adapter<BlogRecyclerAdapte
         String localization_data = blog_list.get(i).getLocalization();
         viewHolder.setLocalizationData(localization_data);
 
-
         String image_url = blog_list.get(i).getImage_url();
         String thumbUri = blog_list.get(i).getImage_thumb();
         viewHolder.setBlogImage(image_url, thumbUri);
