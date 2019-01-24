@@ -33,16 +33,16 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:autofillHints=""
         android:ems="10"
         android:inputType="textMultiLine|text"
         android:labelFor="@id/edit_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_image"
-        tools:targetApi="o" />
+
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/edit_localization"
@@ -59,7 +59,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_title"
-        android:autofillHints="" tools:targetApi="o"/>
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/editpost_text"
@@ -74,14 +74,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_localization"
-        android:autofillHints="" tools:targetApi="o"/>
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/update_btn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/reg_btn_style"
         android:fontFamily="@font/roboto"
@@ -107,23 +107,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/edit_image" />
-
-    <Button
-        android:id="@+id/delete_btn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="10dp"
-        android:background="@color/colorAccent"
-        android:fontFamily="@font/roboto"
-        android:text="@string/delete_button"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/update_btn" />
 </android.support.constraint.ConstraintLayout>

@@ -16,6 +16,8 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -73,8 +75,6 @@ public class ListRecyclerAdapter extends RecyclerView.Adapter<ListRecyclerAdapte
                             String userImage = task.getResult().getString("image");
 
 //                            viewHolder.setUserData(userName, userImage);
-
-
                         }
 
 //                        Toast.makeText(getContext(), "Message: " + name, Toast.LENGTH_SHORT).show();
@@ -116,11 +116,13 @@ public class ListRecyclerAdapter extends RecyclerView.Adapter<ListRecyclerAdapte
         private TextView userPostsLocation;
         private TextView userStatusDefect;
         private TextView editPost;
+        private ImageView deleteBtn;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             iView = itemView;
             editPost = iView.findViewById(R.id.edit_user_post);
+
         }
 
         public void getDefectData(String defect_data, String localization_data) {

@@ -30,4 +30,10 @@
     <string name="defect_street">м.Черкаси, вул. Смілянська, 32</string>
     <string name="defect_type">Defect type</string>
     <string name="status_repair">Status Repair</string>
+    <string name="update_btn">Update</string>
+    <string name="content_description">Roads photo</string>
+    <string name="repair">Repair</string>
+    <string name="edit_post">Edit Post</string>
+    <string name="delete_btn">Delete post</string>
+    <string name="delete_button">Delete</string>
 </resources>

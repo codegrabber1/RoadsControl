@@ -103,32 +103,32 @@ public class BlogRecyclerAdapter extends RecyclerView.Adapter<BlogRecyclerAdapte
         viewHolder.setTime(dateString);
 
         // Likes count
-        firebaseFirestore.collection("Posts/"+blogPostId+"/Likes").addSnapshotListener(new EventListener<QuerySnapshot>() {
-            @Override
-            public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
-                if(!documentSnapshots.isEmpty()){
-                    int count = documentSnapshots.size();
-                    viewHolder.updateLikesCount(count);
-                }else{
-                    viewHolder.updateLikesCount(0);
-                }
-
-            }
-        });
-
-        // Get likes
-        firebaseFirestore.collection("Posts/"+blogPostId+"/Likes").document(currentUser_id).addSnapshotListener(new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(DocumentSnapshot documentSnapshot, FirebaseFirestoreException e) {
-                if(documentSnapshot.exists()){
-                    viewHolder.blogLikeBtn.setImageDrawable(context.getResources().getDrawable(R.mipmap.like_accent));
-
-                }else{
-                    viewHolder.blogLikeBtn.setImageDrawable(context.getResources().getDrawable(R.mipmap.like_grey));
-                }
-
-            }
-        });
+//        firebaseFirestore.collection("Posts/"+blogPostId+"/Likes").addSnapshotListener(new EventListener<QuerySnapshot>() {
+//            @Override
+//            public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
+//                if(!documentSnapshots.isEmpty()){
+//                    int count = documentSnapshots.size();
+//                    viewHolder.updateLikesCount(count);
+//                }else{
+//                    viewHolder.updateLikesCount(0);
+//                }
+//
+//            }
+//        });
+//
+//        // Get likes
+//        firebaseFirestore.collection("Posts/"+blogPostId+"/Likes").document(currentUser_id).addSnapshotListener(new EventListener<DocumentSnapshot>() {
+//            @Override
+//            public void onEvent(DocumentSnapshot documentSnapshot, FirebaseFirestoreException e) {
+//                if(documentSnapshot.exists()){
+//                    viewHolder.blogLikeBtn.setImageDrawable(context.getResources().getDrawable(R.mipmap.like_accent));
+//
+//                }else{
+//                    viewHolder.blogLikeBtn.setImageDrawable(context.getResources().getDrawable(R.mipmap.like_grey));
+//                }
+//
+//            }
+//        });
 
         //Likes feature
         viewHolder.blogLikeBtn.setOnClickListener(new View.OnClickListener() {
@@ -215,11 +215,11 @@ public class BlogRecyclerAdapter extends RecyclerView.Adapter<BlogRecyclerAdapte
 
         }
 
-        public void updateLikesCount(int count) {
-
-            blogLikeCount = iView.findViewById(R.id.blog_like_count);
-            blogLikeCount.setText(count + context.getString(R.string.likes));
-        }
+//        public void updateLikesCount(int count) {
+//
+//            blogLikeCount = iView.findViewById(R.id.blog_like_count);
+//            blogLikeCount.setText(count + context.getString(R.string.likes));
+//        }
 
 
         public void setLocalizationData(String localization_data) {

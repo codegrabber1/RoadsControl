@@ -49,6 +49,7 @@ public class EditPostActivity extends AppCompatActivity {
     private Button update_btn;
     private Uri postImageUri = null;
     private ProgressBar edit_progressBar;
+    private Button deletePost;
 
     private StorageReference storageReference;
     FirebaseFirestore fireBase;
@@ -68,6 +69,9 @@ public class EditPostActivity extends AppCompatActivity {
         update_btn = findViewById(R.id.update_btn);
         edit_progressBar = findViewById(R.id.edit_progressBar);
 
+        deletePost = findViewById(R.id.delete_btn);
+
+
 
         editToolbar = findViewById(R.id.edit_toolbar);
         setSupportActionBar(editToolbar);
@@ -86,7 +90,7 @@ public class EditPostActivity extends AppCompatActivity {
         fireBase = FirebaseFirestore.getInstance();
 
         Intent i = getIntent();
-        String blogId = i.getStringExtra("blogId");
+        final String blogId = i.getStringExtra("blogId");
 
         fireBase.collection("Posts").document(blogId).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -102,6 +106,30 @@ public class EditPostActivity extends AppCompatActivity {
                 }else{
                     Toast.makeText(EditPostActivity.this, "Empty", Toast.LENGTH_LONG).show();
                 }
+            }
+        });
+
+        deletePost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                edit_progressBar.setVisibility(View.VISIBLE);
+                fireBase.collection("Posts").document(blogId).delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if(task.isSuccessful()){
+                            Toast.makeText(EditPostActivity.this, "You click button DELETE ", Toast.LENGTH_SHORT).show();
+                            Intent i = new Intent(EditPostActivity.this, MainActivity.class);
+                            startActivity(i);
+                            finish();
+
+
+                        }else{
+                            Toast.makeText(EditPostActivity.this, "Error of DELETE ", Toast.LENGTH_SHORT).show();
+                        }
+                        edit_progressBar.setVisibility(View.INVISIBLE);
+                    }
+                });
+
             }
         });
 
@@ -131,12 +159,11 @@ public class EditPostActivity extends AppCompatActivity {
         editImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                CropImage.activity()
-                        .setGuidelines(CropImageView.Guidelines.ON)
-                        .setMinCropResultSize(512,512)
-                        .setAspectRatio(1,1)
-                        .start(EditPostActivity.this);
+            CropImage.activity()
+                    .setGuidelines(CropImageView.Guidelines.ON)
+                    .setMinCropResultSize(512,512)
+                    .setAspectRatio(1,1)
+                    .start(EditPostActivity.this);
             }
         });
 
@@ -153,7 +180,6 @@ public class EditPostActivity extends AppCompatActivity {
                 final String desc = editTitle.getText().toString();
                 final String local = editLocal.getText().toString();
                 final String defectText = editPostText.getText().toString();
-//                final String defectImg = editImage.getDrawable().toString();
                 edit_progressBar.setVisibility(View.VISIBLE);
 
                 final String randomName = UUID.randomUUID().toString();
@@ -212,30 +238,7 @@ public class EditPostActivity extends AppCompatActivity {
                         }
                     }
                 });
-//                DocumentReference db = fireBase.collection("Posts").document(blogId);
-//                db.update(
-//                        "road_defect", desc,
-//                        "localization", local,
-//                        "desc", defectText
-//                        )
-//               .addOnSuccessListener(new OnSuccessListener<Void>() {
-//
-//                   @Override
-//                   public void onSuccess(Void aVoid) {
-//                       edit_progressBar.setVisibility(View.VISIBLE);
-//
-//                   }
-//               })
-//               .addOnFailureListener(new OnFailureListener() {
-//                   @Override
-//                   public void onFailure(@NonNull Exception e) {
-//                       Toast.makeText(EditPostActivity.this, "Error updating document", Toast.LENGTH_LONG).show();
-//
-//                   }
-//               });
-//
-//
-//                edit_progressBar.setVisibility(View.INVISIBLE);
+
             }
 
         });
