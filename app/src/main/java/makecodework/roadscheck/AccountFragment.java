@@ -1,6 +1,7 @@
 package makecodework.roadscheck;
 
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -115,5 +116,6 @@ public class AccountFragment extends Fragment {
 
         return view;
     }
+
 
 }

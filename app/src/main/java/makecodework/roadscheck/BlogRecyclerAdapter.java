@@ -59,7 +59,7 @@ public class BlogRecyclerAdapter extends RecyclerView.Adapter<BlogRecyclerAdapte
         firebaseAuth = FirebaseAuth.getInstance();
 
         final String blogPostId = blog_list.get(i).BlogPostId;
-        final String currentUser_id = firebaseAuth.getCurrentUser().getUid();
+//        String currentUser_id = firebaseAuth.getCurrentUser().getUid();
 
         String defect_data = blog_list.get(i).getDefect();
         viewHolder.setDefectTitle(defect_data);
@@ -131,24 +131,24 @@ public class BlogRecyclerAdapter extends RecyclerView.Adapter<BlogRecyclerAdapte
 //        });
 
         //Likes feature
-        viewHolder.blogLikeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                firebaseFirestore.collection("Posts/"+blogPostId+"/Likes").document(currentUser_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        if(!task.getResult().exists()){
-                            Map<String, Object> likesMap = new HashMap<>();
-                            likesMap.put("timestamp", FieldValue.serverTimestamp());
-
-                            firebaseFirestore.collection("Posts/"+blogPostId+"/Likes").document(currentUser_id).set(likesMap);
-                        }else{
-                            firebaseFirestore.collection("Posts/"+blogPostId+"/Likes").document(currentUser_id).delete();
-                        }
-                    }
-                });
-            }
-        });
+//        viewHolder.blogLikeBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                firebaseFirestore.collection("Posts/"+blogPostId+"/Likes").document(currentUser_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+//                        if(!task.getResult().exists()){
+//                            Map<String, Object> likesMap = new HashMap<>();
+//                            likesMap.put("timestamp", FieldValue.serverTimestamp());
+//
+//                            firebaseFirestore.collection("Posts/"+blogPostId+"/Likes").document(currentUser_id).set(likesMap);
+//                        }else{
+//                            firebaseFirestore.collection("Posts/"+blogPostId+"/Likes").document(currentUser_id).delete();
+//                        }
+//                    }
+//                });
+//            }
+//        });
 
     }
 

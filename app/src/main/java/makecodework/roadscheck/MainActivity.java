@@ -51,7 +51,18 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Check Roads");
 
-        if(appAuth.getCurrentUser() != null) {
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                finish();
+            }
+        });
+
+//        if(appAuth.getCurrentUser() != null) {
 
             mainBotNav = findViewById(R.id.mainBotNav);
 
@@ -73,7 +84,12 @@ public class MainActivity extends AppCompatActivity {
                             replaceFragment(notificationFragment);
                             return true;
                         case R.id.bottom_account:
-                            replaceFragment(accountFragment);
+                            if(appAuth.getCurrentUser() != null){
+                                replaceFragment(accountFragment);
+                            }else{
+                                sendToLogin();
+                            }
+
                             return true;
                         default:
                             return false;
@@ -86,12 +102,17 @@ public class MainActivity extends AppCompatActivity {
             addPostBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(MainActivity.this, NewPostActivity.class);
-                    startActivity(i);
-                    finish();
+                    if(appAuth.getCurrentUser() != null){
+                        Intent i = new Intent(MainActivity.this, NewPostActivity.class);
+                        startActivity(i);
+                        finish();
+                    }else{
+                        sendToLogin();
+                    }
+
                 }
             });
-        }
+//        }
     }
 
     @Override
@@ -100,29 +121,30 @@ public class MainActivity extends AppCompatActivity {
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-        if(user == null) {
-            sendToLogin();
-        } else{
-            currentuser_id = appAuth.getCurrentUser().getUid();
-            firebaseFirestore.collection("Users").document(currentuser_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                    if(task.isSuccessful()){
-                        if(!task.getResult().exists()){
-                            Intent mainIntent = new Intent(MainActivity.this, SetupActivity.class);
-                            startActivity(mainIntent);
-
-                        }
-
-                    } else{
-                        String errorMess = task.getException().getMessage();
-                        Toast.makeText(MainActivity.this, "Error: " + errorMess, Toast.LENGTH_LONG).show();
-
-
-                    }
-                }
-            });
-        }
+//        if(user == null) {
+//            //sendToHome();
+//            sendToLogin();
+//        } else{
+//            currentuser_id = appAuth.getCurrentUser().getUid();
+//            firebaseFirestore.collection("Users").document(currentuser_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+//                @Override
+//                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+//                    if(task.isSuccessful()){
+//                        if(!task.getResult().exists()){
+//                            Intent mainIntent = new Intent(MainActivity.this, SetupActivity.class);
+//                            startActivity(mainIntent);
+//
+//                        }
+//
+//                    } else{
+//                        String errorMess = task.getException().getMessage();
+//                        Toast.makeText(MainActivity.this, "Error: " + errorMess, Toast.LENGTH_LONG).show();
+//
+//
+//                    }
+//                }
+//            });
+//        }
 
 
     }
@@ -138,24 +160,36 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        switch(item.getItemId()){
-            case R.id.ac_settings:
-                Intent i = new Intent(MainActivity.this,SetupActivity.class);
-                startActivity(i);
-                finish();
-                return true;
-            case R.id.log_out:
-                logOut();
-                return true;
+            switch(item.getItemId()){
+                case R.id.ac_settings:
+                    if(appAuth.getCurrentUser() != null){
+                        Intent i = new Intent(MainActivity.this,SetupActivity.class);
+                        startActivity(i);
+                        finish();
+                    }else{
+                        sendToLogin();
+                    }
+                    return true;
+                case R.id.log_out:
+                    logOut();
+                    return true;
 
-            default: return false;
-        }
+                default: return false;
+            }
+
 
     }
 
     private void logOut() {
         appAuth.signOut();
-        sendToLogin();
+        sendToHome();
+        //sendToLogin();
+    }
+
+    private void sendToHome() {
+        Intent i = new Intent(MainActivity.this, HomeActivity.class);
+        startActivity(i);
+        finish();
     }
 
     private void sendToLogin() {
