@@ -59,7 +59,7 @@ public class BlogRecyclerAdapter extends RecyclerView.Adapter<BlogRecyclerAdapte
         firebaseAuth = FirebaseAuth.getInstance();
 
         final String blogPostId = blog_list.get(i).BlogPostId;
-//        String currentUser_id = firebaseAuth.getCurrentUser().getUid();
+//      String currentUser_id = firebaseAuth.getCurrentUser().getUid();
 
         String defect_data = blog_list.get(i).getDefect();
         viewHolder.setDefectTitle(defect_data);
@@ -174,7 +174,7 @@ public class BlogRecyclerAdapter extends RecyclerView.Adapter<BlogRecyclerAdapte
         public ViewHolder(View itemView){
             super(itemView);
             iView = itemView;
-            blogLikeBtn = iView.findViewById(R.id.blog_like);
+//          blogLikeBtn = iView.findViewById(R.id.blog_like);
 
         }
 
@@ -191,8 +191,6 @@ public class BlogRecyclerAdapter extends RecyclerView.Adapter<BlogRecyclerAdapte
             Glide.with(context).applyDefaultRequestOptions(requestOptions).load(downloadUri).thumbnail(
                     Glide.with(context).load(thumbUri)
             ).into(blogImageView);
-
-
         }
 
         public void setTime(String date){

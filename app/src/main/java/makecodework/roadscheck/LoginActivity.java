@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private ImageView logoImg;
+//    private ImageView logoImg;
     private EditText loginName;
     private EditText loginPass;
     private Button loginBtn;
@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        logoImg = findViewById(R.id.logo_img);
+//        logoImg = findViewById(R.id.logo_img);
         loginName = findViewById(R.id.login_name);
         loginPass = findViewById(R.id.login_pass);
         crcProgress = findViewById(R.id.circle_progress);

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="16dp"
     tools:context=".EditPostActivity">
 
     <android.support.v7.widget.Toolbar
@@ -52,6 +53,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:autofillHints=""
         android:ems="10"
         android:inputType="textPersonName"
         android:labelFor="@id/edit_localization"
@@ -59,7 +61,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_title"
-        android:autofillHints="" tools:targetApi="o"/>
+        tools:targetApi="o" />
 
     <EditText
         android:id="@+id/editpost_text"
@@ -68,13 +70,14 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:autofillHints=""
         android:ems="10"
         android:inputType="textMultiLine|textImeMultiLine"
         android:labelFor="@id/editpost_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_localization"
-        android:autofillHints="" tools:targetApi="o"/>
+        tools:targetApi="o" />
 
     <Button
         android:id="@+id/update_btn"
@@ -82,7 +85,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
         android:background="@drawable/reg_btn_style"
         android:fontFamily="@font/roboto"
         android:text="@string/update_btn"
@@ -90,7 +92,6 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editpost_text" />
 
@@ -110,20 +111,19 @@
 
     <Button
         android:id="@+id/delete_btn"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="10dp"
-        android:background="@color/colorAccent"
+        android:background="@drawable/delete_btn_style"
         android:fontFamily="@font/roboto"
         android:text="@string/delete_button"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/update_btn" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/update_btn"
+        app:layout_constraintTop_toBottomOf="@+id/editpost_text" />
 </android.support.constraint.ConstraintLayout>

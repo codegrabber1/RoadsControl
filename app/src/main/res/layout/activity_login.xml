@@ -4,21 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/AccentBackground"
+
     tools:context=".LoginActivity">
 
-    <ImageView
-        android:id="@+id/logo_img"
-        android:layout_width="160dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="8dp"
-        android:background="@mipmap/ic_launcher"
-        android:contentDescription="@string/img_alt"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/AccentBackground"
+        android:orientation="vertical"
+        android:padding="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="Welcome Text"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="40sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/roboto"
+            android:lineSpacingExtra="5sp"
+            android:text="Презентаційний текст для користування додатком. Це слова і букви були змінені додаванням або видаленням, так навмисно роблять його зміст безглуздо, це не є справжньою, правильно чи зрозумілою Латинської більше."
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <!--<ImageView-->
+        <!--android:id="@+id/logo_img"-->
+        <!--android:layout_width="160dp"-->
+        <!--android:layout_height="150dp"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:background="@mipmap/ic_launcher"-->
+        <!--android:contentDescription="@string/img_alt"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/linearLayout" />-->
     <!--<TextView-->
         <!--android:id="@+id/logo_img"-->
         <!--android:layout_width="0dp"-->
@@ -38,11 +70,13 @@
         <!--app:layout_constraintTop_toTopOf="parent" />-->
 
     <EditText
+        android:drawableLeft="@drawable/ic_email_black_24dp"
+        android:drawablePadding="10dp"
         android:id="@+id/login_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:autofillHints="auto"
         android:background="@drawable/reg_edittext_style"
@@ -58,7 +92,7 @@
         android:typeface="sans"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo_img"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         tools:targetApi="o" />
 
     <EditText
@@ -66,9 +100,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/reg_edittext_style"
+        android:drawableLeft="@drawable/ic_lock_black_24dp"
+        android:drawablePadding="10dp"
         android:ems="10"
         android:fontFamily="@font/roboto"
         android:hint="@string/logo_pass_hint"
@@ -87,14 +123,16 @@
 
     <Button
         android:id="@+id/login_btn"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/reg_btn_style"
+        android:drawableRight="@drawable/ic_send_black_24dp"
+        android:drawablePadding="10dp"
         android:fontFamily="@font/roboto"
-        android:padding="18dp"
+        android:padding="10dp"
         android:text="@string/login_btn"
         android:textAllCaps="false"
         android:textColor="@color/white"
@@ -107,6 +145,7 @@
         android:id="@+id/sent_to_reg"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:background="@color/white"
         android:padding="18dp"
         android:text="@string/send_to_reg"
@@ -115,7 +154,9 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_btn"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ProgressBar
         android:id="@+id/circle_progress"
@@ -123,13 +164,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:foreground="@color/colorPrimaryDark"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/sent_to_reg"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_btn" />
+        app:layout_constraintTop_toTopOf="@+id/linearLayout" />
 </android.support.constraint.ConstraintLayout>

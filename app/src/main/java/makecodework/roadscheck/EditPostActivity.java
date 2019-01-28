@@ -36,6 +36,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.UUID;
 
 import id.zelory.compressor.Compressor;
@@ -47,7 +48,7 @@ public class EditPostActivity extends AppCompatActivity {
     private EditText editLocal;
     private EditText editPostText;
     private Button update_btn;
-    private Uri postImageUri = null;
+    private Uri postImageUri;
     private ProgressBar edit_progressBar;
     private Button deletePost;
 
@@ -186,10 +187,13 @@ public class EditPostActivity extends AppCompatActivity {
                 storageReference = FirebaseStorage.getInstance().getReference();
 
                 StorageReference filePath = storageReference.child("post_images").child(randomName + ".jpg");
+
                 filePath.putFile(postImageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+
                     @Override
                     public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
                         final String downloadUri = task.getResult().getDownloadUrl().toString();
+
                         if(task.isSuccessful()){
                             File actualImageFile = new File(postImageUri.getPath());
                             try {
@@ -250,8 +254,11 @@ public class EditPostActivity extends AppCompatActivity {
         if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
             if (resultCode == RESULT_OK) {
+
                 postImageUri = result.getUri();
                 editImage.setImageURI(postImageUri);
+
+
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 Exception error = result.getError();
             }

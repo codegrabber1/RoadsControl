@@ -1,6 +1,7 @@
 package makecodework.roadscheck;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -110,8 +111,19 @@ public class HomeFragment extends Fragment {
                 public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
 
                     if (isFirstPageFirstLoad) {
-                        lastVisible = documentSnapshots.getDocuments()
-                                .get(documentSnapshots.size() -1);
+                        if(!documentSnapshots.isEmpty()){
+                            lastVisible = documentSnapshots.getDocuments()
+                                    .get(documentSnapshots.size() -1);
+                        }else if(firebaseAuth.getCurrentUser() != null) {
+                            Toast.makeText(getActivity(), "Add a new post", Toast.LENGTH_SHORT).show();
+                            Intent i = new Intent(getActivity(), NewPostActivity.class);
+                            startActivity(i);
+                        }else{
+                            Toast.makeText(getActivity(), "Add a new post", Toast.LENGTH_SHORT).show();
+                            Intent i = new Intent(getActivity(), LoginActivity.class);
+                            startActivity(i);
+                        }
+
                     }
                     for (DocumentChange doc : documentSnapshots.getDocumentChanges()) {
                         if (doc.getType() == DocumentChange.Type.ADDED) {
