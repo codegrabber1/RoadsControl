@@ -48,7 +48,8 @@ public class EditPostActivity extends AppCompatActivity {
     private EditText editLocal;
     private EditText editPostText;
     private Button update_btn;
-    private Uri postImageUri;
+    private Uri postImageUri = null;
+    private boolean isChanged = false;
     private ProgressBar edit_progressBar;
     private Button deletePost;
 
@@ -232,9 +233,13 @@ public class EditPostActivity extends AppCompatActivity {
                                                 startActivity(i);
                                                 finish();
                                             }else{
+                                                String error = task.getException().getMessage();
+                                                Toast.makeText(EditPostActivity.this, "(IMAGE Error): " + error, Toast.LENGTH_LONG).show();
 
+                                                edit_progressBar.setVisibility(View.INVISIBLE);
                                             }
-                                            edit_progressBar.setVisibility(View.INVISIBLE);
+                                            // TODO Переробити дану сторінку згідно зі сторінкою - SetupActivity
+
                                         }
                                     });
                                 }
@@ -248,6 +253,8 @@ public class EditPostActivity extends AppCompatActivity {
         });
 
     }
+
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

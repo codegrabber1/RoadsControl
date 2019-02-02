@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".HomeActivity">
+    tools:context=".HomeActivity"
+    android:background="@color/BodyBackground">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/home_toolbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,14 +30,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/home_toolbar">
 
-        <android.support.v7.widget.CardView
+        <android.support.design.card.MaterialCardView
             android:id="@+id/info_card"
-            android:layout_width="160dp"
+            android:layout_width="match_parent"
             android:layout_height="190dp"
             android:layout_margin="10dp"
             android:clickable="true"
             android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground">
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="4dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -56,7 +58,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Info"
+                    android:text="@string/info"
                     android:textStyle="bold" />
 
                 <View
@@ -69,59 +71,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="Check the new info"
+                    android:text="@string/check_the_new_info"
                     android:textColor="@color/input_hint"
                     android:textStyle="bold" />
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </android.support.design.card.MaterialCardView>
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/notification_card"
-            android:layout_width="160dp"
-            android:layout_height="190dp"
-            android:layout_margin="10dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:background="@color/materialgreen"
-                    android:contentDescription="@string/content_description"
-                    android:padding="10dp"
-                    android:src="@drawable/ic_notifications" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="Сповіщення"
-                    android:textStyle="bold" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_margin="10dp"
-                    android:background="@color/light_grey_line" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="Check notifications"
-                    android:textColor="@color/input_hint"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-        </android.support.v7.widget.CardView>
 
 
     </LinearLayout>
@@ -139,14 +96,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/main_layout">
 
-        <android.support.v7.widget.CardView
+        <android.support.design.card.MaterialCardView
             android:id="@+id/defect_card"
             android:layout_width="160dp"
             android:layout_height="190dp"
             android:layout_margin="10dp"
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            app:cardCornerRadius="4dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -166,7 +124,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Переглянути повідомлення"
+                    android:text="@string/home_see_notification"
                     android:textAlignment="center"
                     android:textStyle="bold" />
 
@@ -180,21 +138,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="See new photos"
+                    android:text="@string/see_new_photos"
                     android:textColor="@color/input_hint"
                     android:textStyle="bold" />
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </android.support.design.card.MaterialCardView>
 
-        <android.support.v7.widget.CardView
+        <android.support.design.card.MaterialCardView
             android:id="@+id/defect_photo_card"
             android:layout_width="160dp"
             android:layout_height="190dp"
             android:layout_margin="10dp"
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            app:cardCornerRadius="4dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -214,7 +173,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Додати фото"
+                    android:text="@string/add_photo_to_home"
                     android:textAlignment="center"
                     android:textStyle="bold" />
 
@@ -228,13 +187,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="Make photo of the defects road"
+                    android:text="@string/make_photo_of_the_defects_road"
                     android:textAlignment="center"
                     android:textColor="@color/input_hint"
                     android:textStyle="bold" />
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </android.support.design.card.MaterialCardView>
 
 
     </LinearLayout>

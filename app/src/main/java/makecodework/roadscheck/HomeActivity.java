@@ -10,7 +10,7 @@ import android.view.View;
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Toolbar homeToolbar;
-    private CardView infoCard, notifCard, defectCard, defectPhoto;
+    private CardView infoCard, defectCard, defectPhoto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,13 +24,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
 
         infoCard = findViewById(R.id.info_card);
-        notifCard = findViewById(R.id.notification_card);
         defectCard = findViewById(R.id.defect_card);
         defectPhoto = findViewById(R.id.defect_photo_card);
 
         // Add click listenere
         infoCard.setOnClickListener(this);
-        notifCard.setOnClickListener(this);
         defectCard.setOnClickListener(this);
         defectPhoto.setOnClickListener(this);
     }
@@ -40,7 +38,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         Intent i;
         switch(v.getId()){
             case R.id.info_card:
-                i = new Intent();
+                i = new Intent(this,NewInfoActivity.class);
+                startActivity(i);
                 break;
             case R.id.defect_card:
                 i = new Intent(this, MainActivity.class);

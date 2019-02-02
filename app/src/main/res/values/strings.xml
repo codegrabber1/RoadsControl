@@ -36,4 +36,15 @@
     <string name="edit_post">Edit Post</string>
     <string name="delete_btn">Delete post</string>
     <string name="delete_button">Delete</string>
+    <string name="check_the_new_info">Check the new info</string>
+    <string name="info">Info</string>
+    <string name="home_see_notification">Переглянути повідомлення</string>
+    <string name="see_new_photos">New photos</string>
+    <string name="add_photo_to_home">Додати фото</string>
+    <string name="make_photo_of_the_defects_road">Make photo of the defects road</string>
+    <string name="object_name">Назва об\'єкту</string>
+    <string name="performer">Виконавець</string>
+    <string name="work_price">Вартість робіт</string>
+    <string name="release_date">Здача об\'єкта</string>
+    <string name="add_info">Додати інформацію</string>
 </resources>

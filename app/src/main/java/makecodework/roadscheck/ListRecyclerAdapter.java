@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -115,8 +116,7 @@ public class ListRecyclerAdapter extends RecyclerView.Adapter<ListRecyclerAdapte
         private TextView userPostTitle;
         private TextView userPostsLocation;
         private TextView userStatusDefect;
-        private TextView editPost;
-        private ImageView deleteBtn;
+        private Button editPost;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

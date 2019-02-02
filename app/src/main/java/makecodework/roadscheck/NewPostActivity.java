@@ -2,20 +2,25 @@ package makecodework.roadscheck;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
+
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+
 import android.widget.Toast;
+
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -64,10 +69,13 @@ public class NewPostActivity extends AppCompatActivity {
     private Bitmap compressedImageFile;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_post);
+
 
         storageReference = FirebaseStorage.getInstance().getReference();
         firebaseFirestore = FirebaseFirestore.getInstance();
@@ -84,7 +92,7 @@ public class NewPostActivity extends AppCompatActivity {
 
         npToolbar = findViewById(R.id.np_toolbar);
         setSupportActionBar(npToolbar);
-        getSupportActionBar().setTitle("Add New Post");
+        getSupportActionBar().setTitle("Додати новий дефект");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -97,6 +105,8 @@ public class NewPostActivity extends AppCompatActivity {
             }
         });
 
+
+
         postImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,7 +118,6 @@ public class NewPostActivity extends AppCompatActivity {
 
             }
         });
-
         postBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -207,10 +216,12 @@ public class NewPostActivity extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 postImageUri = result.getUri();
                 postImg.setImageURI(postImageUri);
+
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 Exception error = result.getError();
             }
         }
     }
+
 
 }

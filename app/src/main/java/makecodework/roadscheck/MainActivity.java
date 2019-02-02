@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         addPostBtn = findViewById(R.id.flAcBtn);
 
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Check Roads");
+        getSupportActionBar().setTitle("Чиї Дороги?");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -177,13 +177,12 @@ public class MainActivity extends AppCompatActivity {
                 default: return false;
             }
 
-
     }
 
     private void logOut() {
         appAuth.signOut();
         sendToHome();
-        //sendToLogin();
+
     }
 
     private void sendToHome() {

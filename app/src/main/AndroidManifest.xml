@@ -8,6 +8,20 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <permission
+        android:name="makecodework.roadscheck.permission.MAPS_RECIEVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.example.codegrabber.andrlessons.permission.MAPS_RECIEVE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permissions.READ_GSERVICES" />
+
+    <uses-feature
+        android:glEsVersion="0x0020000"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,6 +30,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity android:name=".NewInfoActivity"></activity>
+        <activity android:name=".InfoActivity" />
         <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,6 +57,10 @@
         <activity
             android:name=".NewPostActivity"
             android:parentActivityName=".MainActivity" />
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyBHz0gBOtJJG3u72ZeEE_lIJQyGmAwBSHI" />
     </application>
 
 </manifest>

@@ -208,7 +208,7 @@ public class BlogRecyclerAdapter extends RecyclerView.Adapter<BlogRecyclerAdapte
 
             placeholderRequest.placeholder(R.drawable.unnamed);
 
-            Glide.with(context).applyDefaultRequestOptions(placeholderRequest).load(image).into(blogUserImage);
+            Glide.with(context).load(image).into(blogUserImage);
 
 
         }
